@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container
+{
+    @apply max-w-[90rem] p-6 w-full mx-auto;
+}
+
+
+.container
+{
+    @apply max-w-[100rem] p-6 w-full mx-auto;
+}
+
+@layer components
+{
+    .header
+    {
+        @apply bg-light border-b-[.1rem] border-black relative;
+    }
+
+    .header__top
+    {
+        @apply md:flex items-center gap-12
+    }
+    .header__top img
+    {
+        @apply w-28;
+    }
+
+    .header__top .header__navd
+    {
+        @apply hidden md:flex gap-10;
+    }
+
+    .header__top .header__navd li a
+    {
+        @apply font-medium text-sm text-black hover:text-berde;
+    }
+
+    .header__action
+    {
+        @apply bg-light absolute top-[6.2rem] right-0 w-[0] h-[90vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+
+    }
+    .header__action.open
+    {
+        @apply w-[100%] px-10 transition-all;
+    }
+
+    .header__action .header__navm
+    {
+        @apply
+        pb-5 flex 
+        flex-col gap-5 md:hidden
+         justify-center items-center;
+    }
+
+    .header__action .header__navm li:hover a
+    {
+        @apply text-berde;
+    }
+    .header__action .header__navm li a
+    {
+        @apply font-thin text-xl text-black;
+    }
+
+    .header__action .header__contact a
+    {
+       @apply flex gap-[1rem] items-center hover:text-berde
+    }
+
+    .header__action .header__contact
+    {
+        @apply flex flex-col gap-3 md:p-2 
+        items-center;
+    }
+    .header__action .header__kamote
+    {
+        @apply flex gap-5
+    }
+
+    .burger__menu
+    {
+        @apply md:hidden;
+    }
+
+    .burger__menu span
+    {
+        @apply w-[1.5rem] h-[.2rem] bg-gray-700 block rounded-full transition-all
+    }
+
+    .burger__menu span:nth-child(2)
+    {
+        @apply my-1
+    }
+
+    .header__wrapper
+    {
+        @apply flex items-center justify-between
+    }
+
+
+    .burger__menu.open span:first-child
+    {
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all
+    }
+
+    .burger__menu.open span:nth-child(2)
+    {
+        @apply opacity-0 transition-all
+    }
+
+    .burger__menu.open span:last-child
+    {
+        @apply transform translate-y-[-8px] rotate-[-225deg] transition-all
+    }
+}
+
+
+                                    /* FAQ */
+
+.blockheader
+{
+    @apply
+    text-[3rem]
+    text-center
+    font-thin
+}                       
+.faqs__wrapper
+.faqs__nav
+{
+    @apply text-center pt-[6rem]
+}
+.faqs__nav li a
+{
+    @apply 
+    text-[1.3rem] 
+    space-y-4
+    font-thin
+
+    hover:underline
+    hover:text-berde
+}
+
+.faqs__wrapper
+.faqs__tab
+.faqs__items h2
+{
+    @apply pt-8 pb-8 text-[1.5rem]
+}
+.faqs__wrapper
+.faqs__tab
+.faqs__items p
+{
+    @apply my-4
+}
+
+.faqs
+{
+    @apply py-4 shadow md:border-t-2;
+}
+.faqs__item
+{
+    @apply my-[2rem]
+}
+
+.faqs__item ul
+{
+    @apply max-h-[0rem] overflow-hidden transition-all 
+    flex flex-col gap-6 md:max-h-[50rem] md:pt-6;
+}
+
+.faqs__item ul.open
+{
+    @apply max-h-[50rem] pt-6 transition-all;
+}
+
+.faqs__item ul li p
+{
+    @apply text-gray-500 hover:text-black;
+}
+
+.faqs__item h2
+{
+    @apply
+    py-[2rem]
+}
+
+.faqs__item h4
+{
+    @apply flex items-center justify-between
+    font-semibold hover:cursor-pointer;
+}
+
+.faqs__wrapper
+{
+    @apply grid grid-cols-1 gap-10 
+    md:grid md:grid-cols-6;
+}
+
+.faqs__item h4 i
+{
+    @apply transition-all md:hidden;
+}
+.faqs__item h4 i.open
+{
+@apply transform rotate-180 transition-all;
+}
+
+/* FAQS TAB */
+
+
+
+
+
+
+.faqs__nav ul li 
+{
+    @apply px-4 pb-3
+}
+
+.faqs__nav ul li .active
+{
+    @apply border-b-4 border-berde 
+}
+
+.faqs__tab
+{
+    @apply bg-[#90c6b5] relative h-[500px] md:h-[250px];
+}
+
+.faqs2__item
+{
+    @apply  hidden opacity-0 transition-all top-7  
+    md:grid md:grid-cols-[_2fr,_2fr] md:items-center md:max-w-[40rem]
+    md:left-[32%]; 
+}
+
+
+.faqs2__item.active
+{
+    @apply 
+    block opacity-100 transition-all pt-0;
+}
+
+
+/* Footer */
+.footer
+{
+    @apply 
+    bg-[#f2f2f2]
+}
+
+.footer__wrapper
+{
+    @apply 
+    grid grid-rows-2 
+    place-items-center
+}
+
+.footer__image img
+{
+    @apply 
+    w-[12rem]
+}
+
+.footer__btn
+{
+    @apply 
+    flex flex-col 
+    justify-center items-center 
+    gap-4
+}
+.footer__under
+{
+    @apply text-center 
+}
+.footer__brand
+{
+    @apply
+    mt-3
+    flex 
+    flex-row
+    gap-5
+    items
