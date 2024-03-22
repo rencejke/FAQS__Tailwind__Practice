@@ -31,7 +31,7 @@ burgir.addEventListener("click", () =>{
     menu.classList.toggle("open");
 });
   
-const links = document.querySelectorAll(".faqs__questions");  //.faqs__item h4
+const links = document.querySelectorAll(".faqs__questions"); //.faqs__item h4
 links.forEach((link) => {   
 link.addEventListener("click", () => {
 link.querySelector("i").classList.toggle("open");
