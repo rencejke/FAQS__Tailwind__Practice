@@ -5,23 +5,35 @@
 
 .container
 {
-    @apply max-w-[70rem] px-[1.5rem] w-full mx-auto;
+    @apply max-w-[100rem] px-[3rem] xs:py-3  w-full mx-auto;
+}
+
+body
+{
+    @apply
+    font-raleway
 }
 
 @layer components
 {
     .header
     {
-        @apply bg-light border-b-[.1rem] border-black relative;
+        @apply bg-light border-b-[.1rem] border-black relative
+        md:border-b-0 md:border-none;
     }
 
     .header__top
     {
-        @apply md:flex items-center gap-12
+        @apply xs:flex xs:justify-between xs:items-center
+        md:border-b-[.1rem] md:border-black 
+        md:py-5
+        md:flex
+        md:justify-between
+        md:items-center
     }
     .header__top img
     {
-        @apply w-28;
+        @apply w-28 md:w-[12rem];
     }
 
     .header__top .header__navd
@@ -33,10 +45,16 @@
     {
         @apply font-medium text-sm text-black hover:text-berde;
     }
+    .header__top .header__navd li i h4
+    {
+        @apply font-medium text-sm text-black
+    }
 
     .header__action
     {
-        @apply bg-light absolute top-[5rem] right-0 w-[0] h-[90vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+        @apply bg-light absolute top-[5rem] right-0 w-[0] 
+        h-[90vh] px-0 pt-0 overflow-hidden transition-all
+        shadow-md md:static md:h-fit md:w-fit md:shadow-none;
 
     }
     .header__action.open
@@ -58,7 +76,7 @@
     }
     .header__action .header__navm li a
     {
-        @apply font-thin text-base text-black;
+        @apply font-medium text-base text-black;
     }
 
     .header__action .header__contact a
@@ -69,22 +87,22 @@
        items-center 
      
     }
-    .header__action .header__contact
-    span
+    .header__action .header__contact span
     {
-        @apply text-base
+        @apply text-[1rem]
+    }
+    .header__action .header__contact li i
+    {
+        @apply m-2
     }
 
     .header__action .header__contact
     {
-        @apply flex flex-col gap-3 md:p-2 
+        @apply flex 
+        flex-col gap-3 md:p-2 
         items-center
         md:flex md:flex-row
         ;
-    }
-    .header__action .header__kamote
-    {
-        @apply flex gap-5
     }
 
     .burger__menu
@@ -94,7 +112,11 @@
 
     .burger__menu span
     {
-        @apply w-[1.5rem] h-[.2rem] bg-gray-700 block rounded-full transition-all
+        @apply w-[1.5rem] h-[.2rem]
+         bg-gray-700 block
+          rounded-full
+          transition-all
+          
     }
 
     .burger__menu span:nth-child(2)
@@ -102,11 +124,25 @@
         @apply my-1
     }
 
-    .header__wrapper
-    {
-        @apply flex items-center justify-between
-    }
 
+    .header__under .header__navd
+    {
+        @apply
+        md:opacity-100
+        md:flex
+        md:justify-around
+        md:items-center
+        md:py-6
+        md:uppercase
+    }
+    .header__under .header__navd li:nth-child(even)
+    {
+        @apply 
+        border-l-[.1rem]
+        border-r-[.1rem]
+        border-black
+        px-20
+    }
 
     .burger__menu.open span:first-child
     {
@@ -134,8 +170,18 @@
     text-center
     font-extralight
     text-[#6b7280]
+    text-wrap
+    md:text-[5rem]
+    md:mt-[6rem]
 }      
 
+.faq__tab h2
+{
+    @apply
+    mt-[6rem]
+    font-bold
+    
+}
 
 .faqs__wrapper
 .faqs__nav
@@ -147,8 +193,9 @@
 {
     @apply 
     text-[1.3rem] 
+    md:text-[1.2rem]
     space-y-4
-    font-thin
+    font-light
 
     hover:underline
     hover:text-berde
@@ -173,7 +220,8 @@
 }
 .faqs__item
 {
-    @apply my-[2rem]
+    @apply my-[2rem] bg-[#f2f2f2]
+    p-6
 }
 
 .faqs__item h2
@@ -191,6 +239,7 @@
     gap-6 
     /* md:max-h-[50rem] 
     md:pt-6; */
+    bg-[#f2f2f2]
 }
 
 .faqs__item ul.open
@@ -202,12 +251,25 @@
 {
     @apply text-gray-500 hover:text-black;
 }
-
+.faqs__item ul li 
+{
+    @apply 
+    flex
+    flex-row
+    gap-3
+    items-start
+}
+.faqs__item ul li i
+{
+    @apply
+    text-[#28941e]
+}
+/* 
 .faqs__item h2
 {
     @apply
-    py-[2rem]
-}
+    py-[6rem]
+} */
 
 .faqs__item h4
 {
@@ -220,8 +282,10 @@
     @apply grid grid-cols-1
     md:grid 
     md:grid-cols-[20rem_1fr];
-
-
+}
+.faqs__wrapper .faqs__nav
+{
+    @apply self-start
 }
 
 .faqs__item h4 i
@@ -244,13 +308,15 @@
 
 .faqs__nav ul li .active
 {
-    @apply border-b-4 border-berde 
+    @apply border-b-4 border-berde text-berde font-bold
+    md:border-berde
+    md:border-b-4
 }
 
 .faqs__tab
 {
     @apply bg-[#90c6b5] relative h-[500px] md:h-[250px];
-}
+    }
 
 .faqs2__item
 {
@@ -273,12 +339,21 @@
 {
     @apply 
     bg-[#f2f2f2]
+    p-6
+}
+
+.footer__link
+{
+    @apply 
+    hidden
 }
 
 .footer__top
 {
-   display:  grid;
-   grid-template-columns: 40% 11% 11% 11% 42%;
+   @apply
+   md:grid
+   md:grid-cols-[35%_12%_12%_12%_50%]
+   p-11;
 }
 
 .footer__image img
@@ -291,19 +366,24 @@
 {
     @apply 
     flex flex-col 
-    justify-center items-center 
+    justify-center 
+    items-center 
     gap-3
 }
 
 .footer__under
 {
     @apply 
-    grid grid-rows-2 
-    place-items-center
+    flex flex-col 
+    justify-center
+    items-center
     text-center 
     border-t-[#6b7280]
     border-[.1rem]
     w-[100%]
+    md:flex
+    md:flex-row-reverse
+    md:justify-between
     
 }
 
@@ -324,12 +404,13 @@
     items-center
     justify-center
     py-5
+    md:py-0
 }
 
 .footer__brand span 
 {
     @apply 
-    font-thin
+    font-normal
     text-[#6b7280]
 }
 
@@ -339,6 +420,24 @@
     text-[#6b7280]
     text-[2rem]
 }
+.footer__link 
+{
+    @apply 
+    md:opacity-100
+}
+.footer__link h5
+{
+    @apply
+    font-bold
+}
+.footer__link li a
+{
+    @apply
+    font-light
+}
+
+
+
 
 @layer utilities
 {
@@ -353,6 +452,16 @@
         text-light
         hover:bg-[#daa625]
     }
+    .btn-flightGreen
+    {
+        @apply
+         bg-[#28941e] 
+        border-[.1rem]
+        px-20
+        py-2
+        rounded-md
+        text-light
+    }
 
     .btn-darkyellow
     {
@@ -365,6 +474,22 @@
         text-light
         border-[#28941e]
         md:px-5
+        md:text-[.8rem]
+    }
+
+    
+    .btn-darkyellow2
+    {
+        @apply
+      bg-[#daa625] 
+        border-[.1rem]
+        px-16
+        py-2
+        rounded-md
+        text-light
+        border-[#28941e]
+        md:px-12
+        md:py-3
         md:text-[.8rem]
     }
     .btn-darkblue
@@ -387,6 +512,18 @@
             border-[.1rem]
             border-[#28941e]
             px-11
+            py-2
+            rounded-md
+            hover:bg-[#daa625]
+            hover:text-light
+        }
+
+        .btn-fbgLess
+        {
+            @apply 
+            border-[.1rem]
+            border-[#28941e]
+            px-20
             py-2
             rounded-md
             hover:bg-[#daa625]

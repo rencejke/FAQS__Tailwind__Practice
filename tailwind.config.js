@@ -9,8 +9,14 @@ module.exports = {
           roomDesign2:"url(../dist/img/projects2.png)",
           roomDesign3:"url(../dist/img/projects3.png)",
         },
+
+        fontFamily:
+        {
+          raleway: [ "Raleway", "sans-serif"],
+        },
       colors: {
        
+        
         dark: '#2b2b2b2b',
         light: '#ffffff',
         berde: '#006341',
@@ -23,7 +29,11 @@ module.exports = {
         sec7: '#c9591d',
         sec8: '#002e1f',
         lberde: "#d4e9e2",
-      }
+      },
+      screens:
+      {
+        'xs': '414px',
+      },
 
     },
   },
