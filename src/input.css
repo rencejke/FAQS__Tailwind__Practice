@@ -5,7 +5,9 @@
 
 .container
 {
-    @apply max-w-[100rem] px-[3rem] xs:py-3  w-full mx-auto;
+    @apply max-w-[100rem] px-[3rem] xs:py-3  w-full mx-auto
+    border-none;
+    
 }
 
 body
@@ -19,7 +21,7 @@ body
     .header
     {
         @apply bg-light border-b-[.1rem] border-black relative
-        md:border-b-0 md:border-none;
+        md:border-none;
     }
 
     .header__top
@@ -53,7 +55,7 @@ body
     .header__action
     {
         @apply bg-light absolute top-[5rem] right-0 w-[0] 
-        h-[90vh] px-0 pt-0 overflow-hidden transition-all
+        h-[100dvh] px-0 pt-0 overflow-hidden transition-all
         shadow-md md:static md:h-fit md:w-fit md:shadow-none;
 
     }
@@ -156,7 +158,7 @@ body
 
     .burger__menu.open span:last-child
     {
-        @apply transform translate-y-[-8px] rotate-[-225deg] transition-all
+        @apply transform translate-y-[-5px] rotate-[-225deg] transition-all
     }
 }
 
@@ -166,13 +168,13 @@ body
 .blockheader h5
 {
     @apply
-    text-[3rem]
+    text-[2.5rem]
+    text-wrap
     text-center
     font-extralight
     text-[#6b7280]
-    text-wrap
     md:text-[5rem]
-    md:mt-[6rem]
+    md:mt-[4rem]
 }      
 
 .faq__tab h2
@@ -180,13 +182,14 @@ body
     @apply
     mt-[6rem]
     font-bold
+    text-[1.5rem]
     
 }
 
 .faqs__wrapper
 .faqs__nav
 {
-    @apply text-center pt-[6rem]
+    @apply text-center pt-[5rem]
     md:text-left
 }
 .faqs__nav li a
@@ -194,12 +197,18 @@ body
     @apply 
     text-[1.3rem] 
     md:text-[1.2rem]
-    space-y-4
-    font-light
+    font-normal
 
     hover:underline
-    hover:text-berde
+     hover:text-berde
 }
+.faqs__nav .active
+{
+    @apply
+    underline
+    text-berde
+}
+
 
 .faqs__wrapper
 .faqs__tab
@@ -216,7 +225,7 @@ body
 
 .faqs
 {
-    @apply py-4 shadow md:border-t-2;
+    @apply py-4 shadow 
 }
 .faqs__item
 {
@@ -274,7 +283,47 @@ body
 .faqs__item h4
 {
     @apply flex items-center justify-between
-    font-semibold hover:cursor-pointer;
+    hover:cursor-pointer
+    font-bold 
+    text-[1rem]
+    md:text-[1.2rem] 
+    text-[#00001f];
+}
+
+.faqs__questions
+{
+    @apply
+    flex
+    flex-row
+    justify-between
+    items-center
+    hover:cursor-pointer
+}
+.faqs__questions i
+{
+    @apply 
+    transition-all
+}
+
+.faqs__questions__item
+{
+    @apply
+    flex
+    flex-row
+    gap-4
+    items-center
+}
+.faqs__questions__item small
+{
+    @apply
+    text-[1.5rem]
+    font-bold
+    text-[#28941e]
+} 
+
+ .faqs__questions i.open
+{
+@apply transform rotate-180 transition-all;
 }
 
 .faqs__wrapper
@@ -288,14 +337,16 @@ body
     @apply self-start
 }
 
-.faqs__item h4 i
+/* .faqs__item h4 i
 {
     @apply transition-all;
 }
 .faqs__item h4 i.open
 {
 @apply transform rotate-180 transition-all;
-}
+} */
+
+
 
 /* FAQS TAB */
 
@@ -306,12 +357,6 @@ body
     md:pb-0
 }
 
-.faqs__nav ul li .active
-{
-    @apply border-b-4 border-berde text-berde font-bold
-    md:border-berde
-    md:border-b-4
-}
 
 .faqs__tab
 {
@@ -332,6 +377,7 @@ body
     transition-all
     pt-0
 }
+
 
 
 /* Footer */
@@ -492,6 +538,28 @@ body
         md:py-3
         md:text-[.8rem]
     }
+
+    .btn-darkyellow3
+    {
+        @apply
+      xs:bg-[#daa625] 
+        xs:border-[.1rem]
+        px-12
+        py-2
+        rounded-md
+        text-light
+        xs:border-[#28941e]
+        md:px-6
+        md:py-3
+        md:text-[1rem]
+        md:bg-transparent
+        md:text-black
+        md:hover:bg-[#28941e]
+        md:hover:text-light;
+    }
+
+
+    
     .btn-darkblue
     {
         @apply
@@ -503,8 +571,9 @@ body
         text-light
         hover:bg-[#1573e5]
         hover:text-light
-        md:px-3
-        md:text-[.8rem]
+        md:text-[1rem]
+        md:py-3
+        md:px-7
     }  
         .btn-bgLess
         {
